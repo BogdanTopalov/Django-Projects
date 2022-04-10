@@ -45,6 +45,18 @@ class UserLoginForm(AuthenticationForm):
 
 
 class UpdateProfileForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['first_name'].widget.attrs['placeholder'] = 'First Name'
+        self.fields['last_name'].widget.attrs['placeholder'] = 'Last Name'
+        self.fields['email'].widget.attrs['placeholder'] = 'Email'
+
+        self.fields['first_name'].label = ''
+        self.fields['last_name'].label = ''
+        self.fields['email'].label = ''
+        self.fields['date_of_birth'].label = 'Date Of Birth'
+
     class Meta:
         model = Profile
         fields = ('picture', 'first_name', 'last_name', 'email', 'date_of_birth')
@@ -57,10 +69,5 @@ class UpdateProfileForm(forms.ModelForm):
                     'max': datetime.date.today()
                 }
             ),
-        }
-        labels = {
-            'first_name': 'First Name',
-            'last_name': 'Last Name',
-            'date_of_birth': 'Date Of Birth',
         }
 
