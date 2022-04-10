@@ -47,7 +47,7 @@ class UserLoginForm(AuthenticationForm):
 class UpdateProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ('user', )
+        fields = ('picture', 'first_name', 'last_name', 'email', 'date_of_birth')
         widgets = {
             'picture': forms.FileInput(),
             'date_of_birth': forms.DateInput(
@@ -63,3 +63,4 @@ class UpdateProfileForm(forms.ModelForm):
             'last_name': 'Last Name',
             'date_of_birth': 'Date Of Birth',
         }
+
