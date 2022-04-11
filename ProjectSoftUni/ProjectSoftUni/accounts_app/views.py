@@ -3,15 +3,17 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.contrib.auth.views import LoginView, LogoutView
 
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, DetailView, CreateView, DeleteView, UpdateView
+from django.views.generic import TemplateView, DetailView, CreateView, DeleteView, UpdateView, ListView
 
 from ProjectSoftUni.accounts_app.forms import UserRegistrationForm, UserLoginForm, UpdateProfileForm
 from ProjectSoftUni.accounts_app.models import Profile
+from ProjectSoftUni.main_app.models import Recipe
 
 
-class ShowProfileView(DetailView, PermissionRequiredMixin):
+class ShowProfileView(DetailView):
     template_name = 'accounts/profile.html'
     model = Profile
+    context_object_name = 'profile'
 
     # def dispatch(self, request, *args, **kwargs):
     #     if not request.user.is_authenticated:
@@ -53,7 +55,6 @@ class LogoutProfileView(LogoutView):
 class UpdateProfileView(UpdateView):
     template_name = 'accounts/update.html'
     model = Profile
-    # fields = ('email', 'first_name', 'last_name', 'picture')
     form_class = UpdateProfileForm
 
     def get_success_url(self):
@@ -65,3 +66,21 @@ class DeleteProfileView(DeleteView):
     model = Profile
     success_url = reverse_lazy('register profile page')
 
+
+class ProfileRecipesView(ListView):
+    model = Recipe
+    template_name = 'accounts/profile_recipes.html'
+    context_object_name = 'profile_recipes'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(author_id=self.request.user)
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        total_profile_recipes = len(self.object_list)
+        context.update({
+            'total_profile_recipes': total_profile_recipes,
+        })
+        return context
