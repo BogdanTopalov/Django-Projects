@@ -20,6 +20,10 @@ class AccountsCustomUser(AbstractBaseUser, PermissionsMixin):
         default=False,
     )
 
+    is_active = models.BooleanField(
+        default=True,
+    )
+
     date_created = models.DateTimeField(
         auto_now_add=True,
     )
@@ -44,6 +48,8 @@ class Profile(models.Model):
             MinLengthValidator(NAMES_MIN_LENGTH),
             only_letters_validator
         ],
+        null=True,
+        blank=True,
     )
 
     last_name = models.CharField(
@@ -52,11 +58,19 @@ class Profile(models.Model):
             MinLengthValidator(NAMES_MIN_LENGTH),
             only_letters_validator
         ],
+        null=True,
+        blank=True,
     )
 
-    date_of_birth = models.DateField
+    email = models.EmailField(
+        null=True,
+        blank=True,
+    )
 
-    email = models.EmailField()
+    date_of_birth = models.DateField(
+        null=True,
+        blank=True,
+    )
 
     picture = models.ImageField(
         upload_to='profiles/',
@@ -72,3 +86,6 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
         primary_key=True,
     )
+
+    def __str__(self):
+        return self.email
