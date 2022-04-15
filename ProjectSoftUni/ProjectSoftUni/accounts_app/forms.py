@@ -70,4 +70,3 @@ class UpdateProfileForm(forms.ModelForm):
                 }
             ),
         }
-
