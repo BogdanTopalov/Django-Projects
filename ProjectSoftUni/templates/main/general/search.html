@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="search">
+        <div class="search-header">
+            <h1>You searched for: "{{ searched }}"</h1>
+        </div>
+        <div class="search-result">
+            {% if search_results %}
+                {% for result in search_results %}
+                    <li>
+                        {% if result.title %}
+                            <a href="{% url 'show recipe page' result.pk %}">
+                                <h3>{{ result.title }}</h3>
+                            </a>
+                        {% elif result.link %}
+                            <a href="{% url 'course dashboard page' %}">
+                                <h3>{{ result.name }}</h3>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'show product page' result.pk %}">
+                                <h3>{{ result.name }}</h3>
+                            </a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            {% else %}
+                <h1>No results :(</h1>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

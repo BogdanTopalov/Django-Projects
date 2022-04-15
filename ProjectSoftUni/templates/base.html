@@ -1,0 +1,89 @@
+{% load static %}
+{% with logged=request.user.is_authenticated %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectSoftUni</title>
+
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+    <script src="https://kit.fontawesome.com/e1b9d45a73.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li id="logo"><a href="{% url 'home page' %}"><i class="fa-solid fa-burger"></i></a></li>
+            <li class="search-bar">
+                <form method="get" action="{% url 'search' %}">
+                    <input type="text" placeholder="Search" aria-label="Search" name="searched">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'recipe dashboard page' %}">Recipes</a></li>
+            <li><a href="{% url 'product dashboard page' %}">Our Products</a></li>
+            <li><a href="{% url 'course dashboard page' %}">Cooking</a></li>
+            {% if not logged %}
+                <li><a id="register" href="{% url 'register user page' %}">Register</a></li>
+                <li><a id="login" href="{% url 'login user page' %}">Login</a></li>
+            {% else %}
+                <li><a href="{% url 'create recipe page' %}">Add Recipe</a></li>
+                <li><a href="{% url 'show profile page' request.user.id %}">Profile</a></li>
+                <li><a id="logout" href="{% url 'logout user' %}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+    <div class="main">
+
+        {% block page_content %}
+        {% endblock %}
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <a href="{% url 'home page' %}">
+                    <i class="fa-solid fa-burger"></i>
+                </a>
+            </div>
+            <div class="navigate">
+                <h2>Navigate</h2>
+                <a href="{% url 'home page' %}">Home</a>
+                <a href="">About</a>
+                <a href="{% url 'recipe dashboard page' %}">Recipes</a>
+                <a href="{% url 'product dashboard page' %}">Our Products</a>
+                <a href="{% url 'course dashboard page' %}">Cooking</a>
+                {% if not logged %}
+                    <a href="{% url 'register user page' %}">Register</a>
+                    <a href="{% url 'login user page' %}">Login</a>
+                {% endif %}
+            </div>
+            <div class="socials">
+                <h2>Socials</h2>
+                <a href=""><i class="fa-brands fa-facebook"></i>Facebook Page</a>
+                <a href=""><i class="fa-brands fa-twitter"></i>@twitter.page</a>
+                <a href=""><i class="fa-brands fa-instagram"></i>@instagram.page</a>
+            </div>
+            <div class="contacts">
+                <h2>Contacts</h2>
+                <a href=""><i class="fa-solid fa-phone"></i>+359 8888 88888</a>
+                <a href=""><i class="fa-solid fa-envelope"></i>some.email@abv.bg</a>
+            </div>
+            <div class="developer">
+                <h2>Developer</h2>
+                <a href="https://github.com/BogdanTopalov"><i class="fa-brands fa-github"></i>BogdanTopalov</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+{% endwith %}

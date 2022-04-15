@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="product">
+        <div class="product-details">
+            <div class="product-image" style="background-image: url({{ product.image.url }})"></div>
+            <div class="product-info">
+                <h1>{{ product.name }}</h1>
+                <p>* For orders, please contact us via our socials.</p>
+                <h3>Info:</h3>
+                <textarea id="info" aria-label="description" readonly>{{ product.info }}</textarea>
+                <h3><i class="fa-solid fa-coins"></i> {{ product.price }}</h3>
+                {% if user.is_staff %}
+                    <div class="product-info-buttons">
+                        <a id="edit" href="{% url 'edit product page' product.pk %}">Edit product</a>
+                        <a id="delete" href="{% url 'delete product page' product.pk %}">Delete product</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

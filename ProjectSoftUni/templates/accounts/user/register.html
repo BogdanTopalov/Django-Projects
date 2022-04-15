@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+    <div class="form">
+        <h2>Register</h2>
+        <form method="post" action="{% url 'register user page' %}">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Submit</button>
+        </form>
+
+        <p>Already have an account?
+            <a href="{% url 'login user page' %}">Sign In</a>
+        </p>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="course">
+        <div class="course-edit">
+            <form method="post" action="{% url 'edit course page' course.pk %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="recipe">
+        <div class="recipe-header">
+            {% if not category%}
+                <h1>All Recipes</h1>
+            {% else %}
+                <h1>{{ category }}</h1>
+            {% endif %}
+
+            <form method="get" action="{% url 'recipe dashboard page' %}">
+                <select name="category" aria-label="category">
+                    <option value selected>Select all</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Snack">Snack</option>
+                    <option value="Appetizer">Appetizer</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Soup">Soup</option>
+                    <option value="Salad">Salad</option>
+                    <option value="Drink">Drink</option>
+                </select>
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+
+        <div class="recipe-dashboard">
+            {% if not recipes %}
+                <h1>No recipes here :(</h1>
+            {% else %}
+                {% for recipe in recipes %}
+                    <a href="{% url 'show recipe page' recipe.pk%}">
+                        <div class="card" style="background-image: url({{ recipe.image.url }});"></div>
+                    </a>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

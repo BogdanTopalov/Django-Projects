@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="profile">
+        <div class="profile-details">
+            <form method="post" action="{% url 'edit profile page' user.id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

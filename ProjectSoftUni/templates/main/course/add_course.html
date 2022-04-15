@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="course">
+        <div class="course-add">
+            <form method="post" action="{% url 'create course page' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit">Add Course</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

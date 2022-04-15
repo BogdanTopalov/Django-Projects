@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="product">
+        <div class="product-dashboard">
+            <div class="product-header">
+                <h1>Our Products</h1>
+                {% if user.is_staff %}
+                    <a href="{% url 'create product page' %}">Add product</a>
+                {% endif %}
+            </div>
+            <div class="product-dashboard-content">
+                {% if products %}
+                    {% for product in products %}
+                        <a href="{% url 'show product page' product.pk %}">
+                            <div class="product-image" style="background-image: url({{ product.image.url }})"></div>
+                            <h3>{{ product.name }}</h3>
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    <h1>No products here :(</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

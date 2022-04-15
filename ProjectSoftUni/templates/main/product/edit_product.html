@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="product">
+        <div class="product-edit">
+            <form method="post" action="{% url 'edit product page' product.pk %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

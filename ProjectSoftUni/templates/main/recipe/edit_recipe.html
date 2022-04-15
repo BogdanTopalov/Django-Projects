@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="recipe">
+        <div class="recipe-edit">
+            <form method="post" action="{% url 'edit recipe page' recipe.pk %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

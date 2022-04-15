@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <div class="profile">
+        <div class="profile-main">
+            {% if profile.first_name and profile.last_name %}
+                <h1>{{ profile.first_name }} {{ profile.last_name }}</h1>
+            {% else %}
+                <h1> My Profile Page </h1>
+            {% endif %}
+            <div class="profile-image"
+                 style="background-image: url(
+                            {% if profile.picture %}
+                                {{ profile.picture.url }}
+                            {% else %}
+                                '/static/default_profile_picture.png'
+                            {% endif %}
+                         );">
+            </div>
+            <div class="profile-main-buttons">
+                <a id="recipes" href="{% url 'profile recipes page' user.pk %}">My Recipes</a>
+                <a id="edit" href="{% url 'edit profile page' user.pk %}">Edit Profile</a>
+                <a id="delete" href="{% url 'delete profile page' user.pk %}">Delete Profile</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

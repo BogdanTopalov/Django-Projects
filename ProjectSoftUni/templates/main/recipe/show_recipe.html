@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="recipe">
+        <div class="recipe-details">
+            <div class="recipe-image" style="background-image: url({{ recipe.image.url }})"></div>
+            <div class="recipe-info">
+                <h1>{{ recipe.title }}</h1>
+                <p>Category: <b>{{ recipe.category }}</b></p>
+                <p>Servings: <b>{{ recipe.servings }}</b></p>
+                <h3>Description:</h3>
+                <textarea id="description" aria-label="description" readonly>{{ recipe.description }}</textarea>
+                {% if recipe.author_id == user.pk  %}
+                    <div class="recipe-info-buttons">
+                        <a id="edit" href="{% url 'edit recipe page' recipe.pk %}">Edit Recipe</a>
+                        <a id="delete" href="{% url 'delete recipe page' recipe.pk %}">Delete Recipe</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
