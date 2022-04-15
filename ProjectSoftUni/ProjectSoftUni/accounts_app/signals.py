@@ -43,7 +43,10 @@ def delete_profile(instance, **kwargs):
 def profile_picture_change(instance, *args, **kwargs):
     if instance.picture:
         try:
-            old_picture = Profile.objects.get(pk=instance.pk).picture.path
+            try:
+                old_picture = Profile.objects.get(pk=instance.pk).picture.path
+            except ValueError:
+                old_picture = ''
             try:
                 new_picture = instance.picture.path
             except():
