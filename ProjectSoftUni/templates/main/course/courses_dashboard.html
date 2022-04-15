@@ -15,7 +15,7 @@
                         <div class="card">
                             <a href="{{ course.link }}">
                                 <div class="course-image" style="background-image: url({{ course.image.url }})"></div>
-                                <h3>{{ course.name }}</h3>
+                                <h3>{{ course.name|title }}</h3>
                             </a>
                             {% if user.is_staff %}
                                 <div class="course-buttons">

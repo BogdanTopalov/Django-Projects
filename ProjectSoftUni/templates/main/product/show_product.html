@@ -5,7 +5,7 @@
         <div class="product-details">
             <div class="product-image" style="background-image: url({{ product.image.url }})"></div>
             <div class="product-info">
-                <h1>{{ product.name }}</h1>
+                <h1>{{ product.name|title }}</h1>
                 <p>* For orders, please contact us via our socials.</p>
                 <h3>Info:</h3>
                 <textarea id="info" aria-label="description" readonly>{{ product.info }}</textarea>

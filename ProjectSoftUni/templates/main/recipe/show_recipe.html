@@ -5,7 +5,7 @@
         <div class="recipe-details">
             <div class="recipe-image" style="background-image: url({{ recipe.image.url }})"></div>
             <div class="recipe-info">
-                <h1>{{ recipe.title }}</h1>
+                <h1>{{ recipe.title|title }}</h1>
                 <p>Category: <b>{{ recipe.category }}</b></p>
                 <p>Servings: <b>{{ recipe.servings }}</b></p>
                 <h3>Description:</h3>

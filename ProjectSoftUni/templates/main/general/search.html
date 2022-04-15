@@ -11,15 +11,15 @@
                     <li>
                         {% if result.title %}
                             <a href="{% url 'show recipe page' result.pk %}">
-                                <h3>{{ result.title }}</h3>
+                                <h3>{{ result.title|title }}</h3>
                             </a>
                         {% elif result.link %}
                             <a href="{% url 'course dashboard page' %}">
-                                <h3>{{ result.name }}</h3>
+                                <h3>{{ result.name|title }}</h3>
                             </a>
                         {% else %}
                             <a href="{% url 'show product page' result.pk %}">
-                                <h3>{{ result.name }}</h3>
+                                <h3>{{ result.name|title }}</h3>
                             </a>
                         {% endif %}
                     </li>

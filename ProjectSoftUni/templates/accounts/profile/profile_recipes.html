@@ -10,7 +10,7 @@
                 <h1>My Recipes</h1>
                 {% for recipe in profile_recipes %}
                     <div class="profile-recipes-item">
-                        <h3>{{ recipe.title }}</h3>
+                        <h3>{{ recipe.title|title }}</h3>
                         <a href="{% url 'show recipe page' recipe.pk %}">View</a>
                     </div>
                 {% endfor %}
