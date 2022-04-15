@@ -1,0 +1,120 @@
+.product-dashboard,
+.course-dashboard {
+    min-height: inherit;
+    width: inherit;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-header,
+.course-header {
+    height: 10vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.product-header a,
+.course-header a {
+    height: 5vh;
+    width: 10vw;
+    font-size: 1.125em;
+
+    position: absolute;
+    margin-left: 70%;
+
+    text-align: center;
+    line-height: 5vh;
+
+    color: white;
+    background-color: #0066CC;
+
+    cursor: pointer;
+
+    border-radius: 15px;
+    text-decoration: none;
+
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+}
+
+.product-dashboard-content,
+.course-dashboard-content {
+    min-height: 80vh;
+    width: 60%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product-dashboard-content a,
+.course-dashboard-content a,
+.product-dashboard-content a:visited,
+.course-dashboard-content a:visited,
+.product-dashboard-content a:focus,
+.course-dashboard-content a:focus,
+.product-dashboard-content a:hover,
+.course-dashboard-content a:hover,
+.product-dashboard-content a:active,
+.course-dashboard-content a:active {
+    text-decoration: none; color: black; text-align: center
+}
+
+.product-dashboard-content .product-image,
+.course-dashboard-content .course-image {
+    height: 30vh;
+    width: 20vw;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 10px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+}
+
+.course-dashboard-content .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.product-dashboard-content h3,
+.course-dashboard-content .card h3 {
+    padding-top: 1rem;
+}
+
+.course-dashboard-content .card .course-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.course-dashboard-content .card .course-buttons a {
+    height: 5vh;
+    width: 10vw;
+    font-size: 1.125em;
+
+    text-align: center;
+    line-height: 5vh;
+
+    color: white;
+    background-color: #0066CC;
+
+    cursor: pointer;
+
+    border-radius: 15px;
+    text-decoration: none;
+
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+}
+.course-dashboard-content .card .course-buttons a:last-of-type { background-color: #BA0600}

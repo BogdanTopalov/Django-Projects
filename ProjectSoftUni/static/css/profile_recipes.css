@@ -1,0 +1,39 @@
+.profile-recipes {
+    height: 80vh;
+    width: 45vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+}
+
+.profile-recipes .profile-recipes-item {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-recipes a,
+.profile-recipes .profile-recipes-item a {
+    height: 5vh;
+    width: 10vw;
+    font-size: 1.125em;
+
+    text-align: center;
+    line-height: 5vh;
+
+    color: #87431D;
+    background-color: #EBD8C3;
+    font-weight: bold;
+
+    border-radius: 15px;
+    text-decoration: none;
+
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+}

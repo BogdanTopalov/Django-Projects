@@ -1,0 +1,72 @@
+@import "home.css";
+@import "nav_bar.css";
+@import "login_register.css";
+@import "recipe-dashboard.css";
+@import "profile_edit.css";
+@import "profile_main.css";
+@import "footer.css";
+@import "search.css";
+@import "show.css";
+@import "delete.css";
+@import "profile_recipes.css";
+@import "add_edit_forms.css";
+@import "product_course_dashboard.css";
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Great Vibes", cursive;
+}
+
+.main {
+    min-height: 90vh;
+    width: 100%;
+    background-color: #FFF6EA;
+}
+
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: inherit;
+    width: inherit;
+}
+
+.error {
+    width: inherit;
+    text-align: center;
+    line-height: 90vh;
+}
+
+.recipe, .product, .course, .about{
+    min-height: inherit;
+    width: inherit;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    min-height: inherit;
+    width: inherit;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 2rem;
+    gap: 2rem;
+}
+
+
+

@@ -1,0 +1,48 @@
+.profile-delete,
+.recipe-delete,
+.product-delete,
+.course-delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.profile-delete form button,
+.profile-delete a,
+.recipe-delete form button,
+.recipe-delete a,
+.product-delete form button,
+.product-delete a,
+.course-delete form button,
+.course-delete a{
+    height: 5vh;
+    width: 10vw;
+    font-size: 1.125em;
+
+    color: white;
+
+    border: none;
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+}
+
+.profile-delete form button,
+.recipe-delete form button,
+.product-delete form button,
+.course-delete form button {
+    background-color: #BA0600;
+}
+.profile-delete a,
+.recipe-delete a,
+.product-delete a,
+.course-delete a {
+    background-color: #0066CC;
+    text-align: center;
+    line-height: 5vh;
+    text-decoration: none;
+}

@@ -1,0 +1,82 @@
+.form {
+    min-height: inherit;
+    width: inherit;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.form h2 {
+    font-size: 4em;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.form form input {
+    width: 20vw;
+    height: 6vh;
+    font-size: 1.125em;
+    text-align: center;
+
+    background-color: transparent;
+
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.form form input:focus {
+    outline: none;
+
+    border-bottom: solid 0.15rem;
+    transition: 0.1s ease;
+
+    border-color: #0066CC;
+}
+
+.form form input:focus::placeholder {
+    color: transparent;
+    transition: 0.3s ease;
+}
+
+.form form button {
+    width: 20vw;
+    height: 8vh;
+    background-color: #0066CC;
+    color: white;
+    font-size: 1.125em;
+    border: none;
+    border-radius: 30px;
+    margin-top: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+    cursor: pointer;
+
+}
+
+.form p {
+    font-size: 1.125em;
+}
+
+.form p a{
+    font-size: 1.125em;
+    text-decoration: none;
+    color: #0066CC;
+}
+
+.form p a:hover{
+    text-decoration: underline;
+}
+
+form ul li {
+    list-style: none;
+    color: #BA0600;
+}

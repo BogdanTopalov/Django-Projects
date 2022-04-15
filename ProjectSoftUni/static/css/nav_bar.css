@@ -1,0 +1,95 @@
+nav {
+    height: 10vh;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.4);
+    background-color: #F7E9D7;
+
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+}
+
+nav ul {
+    height: inherit;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.25em;
+    color: #87431D;
+}
+
+nav ul li a:hover { color: #D67D3E; }
+
+nav ul li a:visited,
+nav ul li a:focus,
+nav ul li a:hover,
+nav ul li a:active { text-decoration: none;}
+
+nav ul li a#register:hover,
+nav ul li a#login:hover,
+nav ul li a#logout:hover { color: #0066CC; }
+
+nav ul li#logo {
+    margin-right: auto;
+    padding-left: 4rem;
+}
+
+nav ul li:last-of-type {
+    padding-right: 2rem;
+}
+nav ul li a#logout i {
+    font-size: 1.7rem;
+}
+
+nav ul li#logo a i {
+    font-size: 4rem;
+}
+
+nav .search-bar form input {
+    width: 30vw;
+    height: 5vh;
+
+    text-align: center;
+    font-size: 1.125em;
+
+    background-color: #F7E9D7;
+    border-style: solid;
+    border-color: #87431D;
+    border-radius: 30px;
+}
+
+nav .search-bar form input:focus {
+    border-color: #0066CC;
+    overflow: hidden;
+    background-color: #EBD8C3;
+    transition: 0.3s;
+}
+
+nav .search-bar form input:focus::placeholder {
+    color: transparent;
+    transition: 0.3s;
+}
+
+nav .search-bar {
+    margin-right: auto;
+}
+
+nav .search-bar form button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+nav .search-bar form button i {
+    font-size: 1.4rem;
+    color: #87431D;
+    padding-left: 0.5rem;
+}

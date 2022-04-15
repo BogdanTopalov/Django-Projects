@@ -1,0 +1,38 @@
+.search-header {
+    width: 100%;
+    text-align: center;
+}
+
+.search-result {
+    width: 50vw;
+    text-align: center;
+
+    border-top-style: solid;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    padding: 1rem;
+}
+
+.search-result li {
+    height: 7vh;
+    width: 90%;
+
+    list-style: none;
+
+    line-height: 7vh;
+
+    border-radius: 15px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+}
+
+
+.search-result li a,
+.search-result li a:visited,
+.search-result li a:focus,
+.search-result li a:hover,
+.search-result li a:active { text-decoration: none; color: black }

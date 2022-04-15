@@ -1,0 +1,167 @@
+.recipe-edit,
+.product-edit,
+.course-edit,.recipe-add,
+.product-add,
+.course-add {
+    height: 80vh;
+    width: 45vw;
+}
+
+.recipe-edit form,
+.product-edit form,
+.course-edit form,
+.recipe-add form,
+.product-add form,
+.course-add form {
+    height: inherit;
+    width: inherit;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1rem;
+
+    border-radius: 15px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+}
+
+.recipe-edit form label,
+.product-edit form label,
+.course-edit form label,
+.recipe-add form label,
+.product-add form label,
+.course-add form label {
+    font-size: 1.125em;
+}
+.recipe-edit form input,
+.product-edit form input,
+.course-edit form input,
+.recipe-add form input,
+.product-add form input,
+.course-add form input {
+    height: 5vh;
+}
+
+.recipe-edit form input[type='number'],
+.product-edit form input[type='number'],
+.course-edit form input[type='number'],
+.recipe-edit form input[type='url'],
+.product-edit form input[type='url'],
+.course-edit form input[type='url'],
+.recipe-add form input[type='number'],
+.product-add form input[type='number'],
+.course-add form input[type='number'],
+.recipe-add form input[type='url'],
+.product-add form input[type='url'],
+.course-add form input[type='url'] {
+    height: 3vh;
+    width: fit-content;
+    font-size: 1.125em;
+    text-align: center;
+    border-radius: 10px;
+    border-style: none;
+    background-color: transparent;
+    box-shadow:
+            rgba(67, 71, 85, 0.27) 0 0 0.25em,
+            rgba(90, 125, 188, 0.05) 0 0.25em 1em;
+}
+
+.recipe-edit form input[type='text'],
+.product-edit form input[type='text'],
+.course-edit form input[type='text'],
+.recipe-add form input[type='text'],
+.product-add form input[type='text'],
+.course-add form input[type='text'] {
+    text-align: center;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    background-color: transparent;
+    font-size: 1.125em;
+}
+
+.recipe-edit form input:focus,
+.product-edit form input:focus,
+.course-edit form input:focus,
+.recipe-add form input:focus,
+.product-add form input:focus,
+.course-add form input:focus {
+    outline: none;
+}
+
+.recipe-edit form textarea,
+.product-edit form textarea,
+.course-edit form textarea,
+.recipe-add form textarea,
+.product-add form textarea,
+.course-add form textarea {
+    width: 30vw;
+    height: 25vh;
+    /*font-size: 1em;*/
+    background-color: transparent;
+    border-style: none;
+    border-radius: 10px;
+    resize: none;
+    padding: 0.2rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0 0 0 1px inset;
+}
+
+.recipe-edit form select,
+.product-edit form select,
+.course-edit form select,
+.recipe-add form select,
+.product-add form select,
+.course-add form select {
+    width: 7vw;
+    text-align: center;
+    font-size: 1.125em;
+    border-radius: 10px;
+    border-style: none;
+    background-color: transparent;
+     box-shadow:
+            rgba(67, 71, 85, 0.27) 0 0 0.25em,
+            rgba(90, 125, 188, 0.05) 0 0.25em 1em;
+}
+
+.recipe-edit form button,
+.product-edit form button,
+.course-edit form button,
+.recipe-edit form input::-webkit-file-upload-button,
+.product-edit form input::-webkit-file-upload-button,
+.course-edit form input::-webkit-file-upload-button,
+.recipe-add form button,
+.product-add form button,
+.course-add form button,
+.recipe-add form input::-webkit-file-upload-button,
+.product-add form input::-webkit-file-upload-button,
+.course-add form input::-webkit-file-upload-button {
+    height: 5vh;
+    width: 10vw;
+    font-size: 1.125em;
+
+    border-radius: 15px;
+    border-style: none;
+
+    color: white;
+    background-color: #0066CC;
+
+    cursor: pointer;
+
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+}
+
+.recipe-edit form input::-webkit-file-upload-button,
+.product-edit form input::-webkit-file-upload-button,
+.course-edit form input::-webkit-file-upload-button,
+.recipe-add form input::-webkit-file-upload-button,
+.product-add form input::-webkit-file-upload-button,
+.course-add form input::-webkit-file-upload-button {
+    height: 3vh;
+
+    padding: 0 8px 0 8px;
+    margin-right: 8px;
+}

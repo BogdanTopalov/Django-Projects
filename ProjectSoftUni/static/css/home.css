@@ -1,0 +1,19 @@
+.home {
+    width: inherit;
+    min-height: inherit;
+
+    background-image: url("/static/home_page.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+}
+
+.home h1 {
+    font-size: 7rem;
+    color: #87431D;
+    padding-top: 2rem;
+
+}
